@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
@@ -19,8 +17,8 @@ import lombok.Data;
 public class User implements Serializable {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    // @GeneratedValue(strategy = GenerationType.IDENTITY) malas practicas
+    private String id;
 
     @Email(message = "Debe de ingresar un emal valido")
     @Column(unique = true)
@@ -28,8 +26,9 @@ public class User implements Serializable {
 
     @Column(unique = true)
     private String username;
+
     private String name;
     private String surname;
     private String password;
-    private String urlProfilePhoto;
+    private String profilePhoto;
 }
