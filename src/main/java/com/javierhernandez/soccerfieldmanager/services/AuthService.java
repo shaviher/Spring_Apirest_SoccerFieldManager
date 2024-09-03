@@ -1,11 +1,13 @@
 package com.javierhernandez.soccerfieldmanager.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.javierhernandez.soccerfieldmanager.models.User;
-import com.j
+import com.javierhernandez.soccerfieldmanager.repository.AuthRepository;
 
-public class AuthService {
+@Service
+public class AuthService implements IAuthService{
     @Autowired
     private AuthRepository authRepository;
 
